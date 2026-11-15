@@ -24,7 +24,7 @@ window.APEXWARE_GAMES = [
       "First-person 3D WebGL rally simulator with an animated co-pilot, 10 physical terrain surfaces, 4 iconic Group B machines, and 8 international stages.",
     category: "racing",
     status: "LIVE",
-    icon: null, // Next update: "./assets/icons/apex-group-b-rally.png"
+    icon: "./assets/icons/rally.jpeg",
     iconSlot: {
       code: "01",
       monogram: "BR",
@@ -47,7 +47,7 @@ window.APEXWARE_GAMES = [
       "Zero-dependency Grand Prix management simulator featuring active-aero R&D, 3-phase qualifying, live 2D race telemetry, driver contracts, and a Paddock Editor.",
     category: "simulation",
     status: "LIVE",
-    icon: null, // Next update: "./assets/icons/formula-manager.png"
+    icon: "./assets/icons/formula-manager.jpeg",
     iconSlot: {
       code: "02",
       monogram: "FM",
