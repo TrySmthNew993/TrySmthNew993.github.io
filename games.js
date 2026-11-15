@@ -58,5 +58,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/formula-manager",
     secondaryLink: null,
     tags: ["Strategy", "Live Telemetry", "60+ Drivers", "Single-File"]
+  },
+  {
+    id: "rookie-chess",
+    title: "Rookie Chess",
+    subtitle: "Multiplayer WebRTC Chess",
+    description:
+      "Online and local multiplayer chess with timers, clean board animations, and zero-server peer-to-peer WebRTC networking designed for browser play.",
+    category: "strategy",
+    status: "LIVE",
+    icon: "./assets/icons/chess.jpeg",
+    iconSlot: {
+      code: "03",
+      monogram: "RC",
+      accent: "#a855f7",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/chess-online/",
+    repoUrl: "https://github.com/TrySmthNew993/chess-online",
+    secondaryLink: null,
+    tags: ["Chess", "WebRTC P2P", "Multiplayer", "Timers"]
   }
 ];
