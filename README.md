@@ -1,14 +1,24 @@
 # Apexware — Game Library
 
-A minimalistic, GitHub Pages–ready **Obsidian Frosted Glass** game library linking live browser builds and GitHub repositories, with reserved **76×76 squircle icon slots** for every game.
+A minimalistic, dark frost glass game library linking live playable browser builds and open GitHub repositories.
+
+**Live Website**: [https://trysmthnew993.github.io/](https://trysmthnew993.github.io/)
+
+---
+
+## Games Catalog
+
+- **Apex Group B Rally** — 1986 WRC Rally Simulator ([Play Live](https://trysmthnew993.github.io/apex-group-b-rally/) · [Repo](https://github.com/TrySmthNew993/apex-group-b-rally))
+- **Apex Formula GP** — 2026 World Grand Prix Simulator ([Play Live](https://trysmthnew993.github.io/apex-formula-gp/) · [Repo](https://github.com/TrySmthNew993/apex-formula-gp))
+- **Formula Manager** — 2026–2027 Team Principal Simulator ([Play Live](https://trysmthnew993.github.io/formula-manager/) · [Repo](https://github.com/TrySmthNew993/formula-manager))
+- **Rookie Chess** — Multiplayer WebRTC Chess ([Play Live](https://trysmthnew993.github.io/chess-online/) · [Repo](https://github.com/TrySmthNew993/chess-online))
+- **Voxel Sandbox** — 3D Procedural WebGL World ([Play Live](https://trysmthnew993.github.io/voxel-sandbox/) · [Repo](https://github.com/TrySmthNew993/voxel-sandbox))
+
+---
 
 ## Features
 
-- **Steam-Style Library Controls**: Instant search, genre & Favorites (`★`, saved in `localStorage`) filtering, sorting (`Featured`, `A–Z`, `Favorites First`), and click-to-inspect game detail modal.
-- **Icon-Ready Grid**: Every game card reserves a `76×76` squircle icon slot that automatically displays custom artwork once added, or falls back to a clean monogram slot.
-- **GitHub Pages Ready**: Zero build step, relative `./` paths, and `.nojekyll` included.
-
-## Adding Game Icons (Next Update)
-
-1. Drop square icon files (e.g. `apex-group-b-rally.png`, `formula-manager.png`) into `assets/icons/`.
-2. Set `icon: "./assets/icons/<filename>"` on each entry in `games.js`.
+- **Minimalist Dark Frost Glass**: Smoked obsidian surfaces, clean typography, zero neon or emojis.
+- **Starting Portal (`#/`) & Main Library (`#/library`)**: Smooth route switching with search, category filtering, favorites, and detailed inspection modal.
+- **Icon-Ready Squircle Grid**: 76×76 px squircle slots dynamically rendering game artwork or monograms.
+- **GitHub Pages Ready**: Zero build dependencies, relative paths, and `.nojekyll` included.
