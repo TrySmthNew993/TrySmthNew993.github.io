@@ -78,5 +78,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/chess-online",
     secondaryLink: null,
     tags: ["Chess", "WebRTC P2P", "Multiplayer", "Timers"]
+  },
+  {
+    id: "voxel-sandbox",
+    title: "Voxel Sandbox",
+    subtitle: "3D Procedural WebGL World",
+    description:
+      "A modular, 60 FPS browser-based 3D voxel sandbox featuring procedural infinite worlds, biomes, subterranean caves, first-person physics, and browser P2P WebRTC multiplayer.",
+    category: "sandbox",
+    status: "LIVE",
+    icon: "./assets/icons/voxel.jpeg",
+    iconSlot: {
+      code: "04",
+      monogram: "VX",
+      accent: "#10b981",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/voxel-sandbox/",
+    repoUrl: "https://github.com/TrySmthNew993/voxel-sandbox",
+    secondaryLink: null,
+    tags: ["Three.js", "Voxel", "WebRTC P2P", "Procedural", "60 FPS"]
   }
 ];
