@@ -1,5 +1,11 @@
 (() => {
   const games = Array.isArray(window.APEXWARE_GAMES) ? window.APEXWARE_GAMES : [];
+
+  const viewHome = document.getElementById('view-home');
+  const viewLibrary = document.getElementById('view-library');
+  const homeCount = document.getElementById('home-count');
+  const homeStrip = document.getElementById('home-strip');
+
   const grid = document.getElementById('games-grid');
   const searchInput = document.getElementById('game-search');
   const filterPills = document.querySelectorAll('.filter-pill');
@@ -38,9 +44,98 @@
     return node;
   }
 
+  function createSvgBookmark(filled) {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', '15');
+    svg.setAttribute('height', '15');
+    svg.setAttribute('viewBox', '0 0 16 16');
+    svg.setAttribute('fill', filled ? 'currentColor' : 'none');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', 'M4 2.5H12C12.2761 2.5 12.5 2.72386 12.5 3V13.5L8 10.75L3.5 13.5V3C3.5 2.72386 3.72386 2.5 4 2.5Z');
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function createSvgExternalArrow() {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', '12');
+    svg.setAttribute('height', '12');
+    svg.setAttribute('viewBox', '0 0 16 16');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', 'M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5');
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-width', '1.7');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  /* =========================================================================
+     HASH ROUTING (#/ vs #/library)
+     ========================================================================= */
+  function syncRoute() {
+    const hash = window.location.hash || '#/';
+    const isLibrary = hash.startsWith('#/library');
+    if (viewHome) viewHome.hidden = isLibrary;
+    if (viewLibrary) viewLibrary.hidden = !isLibrary;
+    if (isLibrary) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }
+
+  window.addEventListener('hashchange', syncRoute);
+
+  /* =========================================================================
+     HOME STARTING PAGE STRIP
+     ========================================================================= */
+  function renderHomeStrip() {
+    if (homeCount) {
+      const padded = String(games.length).padStart(2, '0');
+      homeCount.textContent = `${padded} RELEASES`;
+    }
+    if (!homeStrip) return;
+    homeStrip.replaceChildren();
+
+    games.forEach((game) => {
+      const item = el('button', 'strip-item');
+      item.type = 'button';
+      item.title = `Open ${game.title} in Library`;
+      item.addEventListener('click', () => {
+        window.location.hash = '#/library';
+        openModal(game);
+      });
+
+      const thumb = el('div', 'strip-thumb');
+      if (game.icon) {
+        const img = el('img');
+        img.src = game.icon;
+        img.alt = game.title;
+        thumb.appendChild(img);
+      } else {
+        thumb.appendChild(el('span', 'slot-monogram', game.iconSlot?.monogram || 'GM'));
+      }
+      item.appendChild(thumb);
+      item.appendChild(el('span', 'strip-title', game.title));
+      homeStrip.appendChild(item);
+    });
+  }
+
+  /* =========================================================================
+     ICON SLOT & ACTION LINKS
+     ========================================================================= */
   function buildIconSlot(game) {
     const slot = el('div', 'game-icon-slot');
-    slot.style.setProperty('--slot-accent', game.iconSlot?.accent || '#38bdf8');
 
     const renderFallback = () => {
       slot.classList.add('is-empty');
@@ -66,7 +161,9 @@
   }
 
   function buildActionLink(label, url, variantClass) {
-    const link = el('a', `action-btn ${variantClass}`, label);
+    const link = el('a', `action-btn ${variantClass}`);
+    link.appendChild(el('span', '', label));
+    link.appendChild(createSvgExternalArrow());
     link.href = url;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
@@ -74,6 +171,9 @@
     return link;
   }
 
+  /* =========================================================================
+     DETAIL MODAL
+     ========================================================================= */
   function openModal(game) {
     if (!modal || !modalBody) return;
     modalBody.replaceChildren();
@@ -83,7 +183,7 @@
 
     const titleWrap = el('div', 'game-title-wrap');
     const meta = el('div', 'game-meta-row');
-    meta.appendChild(el('span', 'status-pill', `● ${game.status || 'LIVE'}`));
+    meta.appendChild(el('span', 'status-pill', game.status || 'LIVE'));
     titleWrap.appendChild(meta);
     const title = el('h2', '', game.title);
     title.id = 'modal-title';
@@ -101,10 +201,10 @@
     modalBody.appendChild(tags);
 
     const actions = el('div', 'game-actions');
-    if (game.pageUrl) actions.appendChild(buildActionLink('Play Live ↗', game.pageUrl, 'action-primary'));
-    if (game.repoUrl) actions.appendChild(buildActionLink('GitHub Repo ↗', game.repoUrl, 'action-secondary'));
+    if (game.pageUrl) actions.appendChild(buildActionLink('Play Live', game.pageUrl, 'action-primary'));
+    if (game.repoUrl) actions.appendChild(buildActionLink('Repository', game.repoUrl, 'action-secondary'));
     if (game.secondaryLink?.url) {
-      actions.appendChild(buildActionLink(`${game.secondaryLink.label} ↗`, game.secondaryLink.url, 'action-tertiary'));
+      actions.appendChild(buildActionLink(game.secondaryLink.label, game.secondaryLink.url, 'action-tertiary'));
     }
     modalBody.appendChild(actions);
 
@@ -123,8 +223,11 @@
     if (e.key === 'Escape') closeModal();
   });
 
+  /* =========================================================================
+     LIBRARY CARDS & FILTERING
+     ========================================================================= */
   function renderGameCard(game) {
-    const card = el('article', 'game-card glass-obsidian-frosted pointer-reactive');
+    const card = el('article', 'game-card glass-frost pointer-reactive');
     card.addEventListener('click', () => openModal(game));
 
     const top = el('div', 'game-card-top');
@@ -132,12 +235,14 @@
 
     const titleWrap = el('div', 'game-title-wrap');
     const metaRow = el('div', 'game-meta-row');
-    metaRow.appendChild(el('span', 'status-pill', `● ${game.status || 'LIVE'}`));
+    metaRow.appendChild(el('span', 'status-pill', game.status || 'LIVE'));
 
-    const favBtn = el('button', `fav-btn ${favorites.has(game.id) ? 'is-fav' : ''}`, favorites.has(game.id) ? '★' : '☆');
+    const isFav = favorites.has(game.id);
+    const favBtn = el('button', `fav-btn ${isFav ? 'is-fav' : ''}`);
     favBtn.type = 'button';
-    favBtn.title = 'Toggle favorite';
-    favBtn.setAttribute('aria-label', `Favorite ${game.title}`);
+    favBtn.title = isFav ? 'Remove from saved' : 'Save game';
+    favBtn.setAttribute('aria-label', `Save ${game.title}`);
+    favBtn.appendChild(createSvgBookmark(isFav));
     favBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (favorites.has(game.id)) {
@@ -159,10 +264,10 @@
     card.appendChild(el('p', 'game-desc', game.description));
 
     const actions = el('div', 'game-actions');
-    if (game.pageUrl) actions.appendChild(buildActionLink('Play ↗', game.pageUrl, 'action-primary'));
-    if (game.repoUrl) actions.appendChild(buildActionLink('Repo ↗', game.repoUrl, 'action-secondary'));
+    if (game.pageUrl) actions.appendChild(buildActionLink('Play', game.pageUrl, 'action-primary'));
+    if (game.repoUrl) actions.appendChild(buildActionLink('Repo', game.repoUrl, 'action-secondary'));
     if (game.secondaryLink?.url) {
-      actions.appendChild(buildActionLink(`${game.secondaryLink.label} ↗`, game.secondaryLink.url, 'action-tertiary'));
+      actions.appendChild(buildActionLink(game.secondaryLink.label, game.secondaryLink.url, 'action-tertiary'));
     }
     card.appendChild(actions);
 
@@ -198,7 +303,7 @@
     grid.replaceChildren();
     if (list.length === 0) {
       grid.appendChild(
-        el('div', 'empty-state glass-obsidian-frosted', 'No games match your current filter.')
+        el('div', 'empty-state glass-frost', 'No games match your current filter.')
       );
       return;
     }
@@ -225,7 +330,7 @@
     renderGames();
   });
 
-  // Pointer-reactive specular catchlight
+  // Subtle monochrome specular catchlight
   document.addEventListener('pointermove', (e) => {
     const targets = document.querySelectorAll('.pointer-reactive');
     for (const node of targets) {
@@ -244,5 +349,7 @@
     }
   });
 
+  renderHomeStrip();
   renderGames();
+  syncRoute();
 })();

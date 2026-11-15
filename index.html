@@ -3,93 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#05070e" />
-  <meta name="description" content="Apexware — Minimalistic Obsidian Frosted Glass game library linking live builds and GitHub repositories." />
-  <meta property="og:title" content="Apexware — Game Library" />
-  <meta property="og:description" content="Playable web games and GitHub repositories by Apexware." />
+  <meta name="theme-color" content="#07080b" />
+  <meta name="description" content="Apexware — Independent web games and simulations." />
+  <meta property="og:title" content="Apexware" />
+  <meta property="og:description" content="Independent web games and simulations." />
   <meta property="og:type" content="website" />
-  <title>Apexware — Library</title>
+  <title>Apexware</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Subtle Obsidian Ambient Backdrop -->
+  <!-- Subtle Monochrome Atmospheric Backdrop -->
   <div class="ambient-stage" aria-hidden="true">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
     <div class="grid-overlay"></div>
   </div>
 
-  <!-- Minimalistic Obsidian Frosted Top Bar -->
-  <header class="top-nav-wrap">
-    <nav class="top-nav glass-obsidian-frosted pointer-reactive" aria-label="Library navigation">
-      <a href="./" class="brand">
-        <span class="brand-orb" aria-hidden="true"></span>
-        <span>APEXWARE</span>
-        <span class="brand-count" id="library-count">2</span>
-      </a>
+  <!-- =======================================================================
+       VIEW 1: STARTING PAGE (#/)
+       ======================================================================= -->
+  <section id="view-home" class="view-home">
+    <div class="home-portal glass-frost pointer-reactive">
+      <div class="home-top">
+        <span class="home-kicker">APEXWARE</span>
+        <span class="home-count" id="home-count">04 RELEASES</span>
+      </div>
 
-      <div class="nav-controls">
-        <label class="search-box">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input
-            id="game-search"
-            type="search"
-            placeholder="Search library..."
-            aria-label="Search games in library"
-          />
-        </label>
+      <div class="home-body">
+        <h1>Independent Web Games &amp; Simulations</h1>
+        <p class="home-subtitle">
+          A quiet, fast index of playable browser builds and open repositories. No installers, no clutter.
+        </p>
+
+        <!-- Minimalist Release Preview Strip -->
+        <div class="home-strip" id="home-strip" aria-label="Featured releases"></div>
+      </div>
+
+      <div class="home-actions">
+        <a href="#/library" id="enter-library-btn" class="btn-frost btn-frost-primary">
+          <span>Enter Library</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
 
         <a
-          class="gh-link"
           href="https://github.com/TrySmthNew993"
           target="_blank"
           rel="noopener noreferrer"
+          class="btn-frost btn-frost-ghost"
         >
-          GitHub ↗
+          <span>GitHub</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </section>
 
-  <main class="library-main">
-    <!-- Steam-like Library Filter & Sort Shelf -->
-    <section class="library-bar" aria-label="Library filters">
-      <div class="filter-pills" role="tablist" aria-label="Filter games">
-        <button class="filter-pill active" type="button" data-filter="all">All Games</button>
-        <button class="filter-pill" type="button" data-filter="favorites">★ Favorites</button>
-        <button class="filter-pill" type="button" data-filter="racing">Racing</button>
-        <button class="filter-pill" type="button" data-filter="simulation">Simulation</button>
-        <button class="filter-pill" type="button" data-filter="strategy">Strategy</button>
-        <button class="filter-pill" type="button" data-filter="sandbox">Sandbox</button>
-      </div>
+  <!-- =======================================================================
+       VIEW 2: MAIN LIBRARY (#/library)
+       ======================================================================= -->
+  <div id="view-library" class="view-library" hidden>
+    <header class="top-nav-wrap">
+      <nav class="top-nav glass-frost pointer-reactive" aria-label="Library navigation">
+        <div class="nav-left">
+          <a href="#/" class="brand" title="Back to start page">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>APEXWARE</span>
+          </a>
+          <span class="brand-count" id="library-count">4</span>
+        </div>
 
-      <div class="sort-wrap">
-        <select id="sort-select" class="sort-select" aria-label="Sort games">
-          <option value="default">Sort: Featured</option>
-          <option value="az">Sort: A – Z</option>
-          <option value="favorites">Sort: Favorites First</option>
-        </select>
-      </div>
-    </section>
+        <div class="nav-controls">
+          <label class="search-box">
+            <svg class="search-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="7" cy="7" r="4.75" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M10.5 10.5L13.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <input
+              id="game-search"
+              type="search"
+              placeholder="Search library..."
+              aria-label="Search games in library"
+            />
+          </label>
 
-    <!-- Game Grid -->
-    <section aria-label="Games grid">
-      <div class="games-grid" id="games-grid" aria-live="polite"></div>
-    </section>
-  </main>
+          <a href="#/" class="nav-link-btn">Home</a>
 
-  <!-- Steam-like Game Details Modal -->
+          <a
+            class="nav-link-btn"
+            href="https://github.com/TrySmthNew993"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>GitHub</span>
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="library-main">
+      <section class="library-bar" aria-label="Library filters">
+        <div class="filter-pills" role="tablist" aria-label="Filter games">
+          <button class="filter-pill active" type="button" data-filter="all">All</button>
+          <button class="filter-pill" type="button" data-filter="favorites">Saved</button>
+          <button class="filter-pill" type="button" data-filter="racing">Racing</button>
+          <button class="filter-pill" type="button" data-filter="simulation">Simulation</button>
+          <button class="filter-pill" type="button" data-filter="strategy">Strategy</button>
+          <button class="filter-pill" type="button" data-filter="sandbox">Sandbox</button>
+        </div>
+
+        <div class="sort-wrap">
+          <select id="sort-select" class="sort-select" aria-label="Sort games">
+            <option value="default">Sort: Featured</option>
+            <option value="az">Sort: A – Z</option>
+            <option value="favorites">Sort: Saved First</option>
+          </select>
+        </div>
+      </section>
+
+      <section aria-label="Games grid">
+        <div class="games-grid" id="games-grid" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Game Details Modal -->
   <div class="modal-backdrop" id="game-modal" hidden>
     <div
-      class="modal-panel glass-obsidian-frosted pointer-reactive"
+      class="modal-panel glass-frost pointer-reactive"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <button class="modal-close" id="modal-close" type="button" aria-label="Close details">✕</button>
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close details">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
       <div id="modal-body"></div>
     </div>
   </div>
