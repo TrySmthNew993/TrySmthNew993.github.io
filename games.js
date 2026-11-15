@@ -98,5 +98,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/voxel-sandbox",
     secondaryLink: null,
     tags: ["Three.js", "Voxel", "WebRTC P2P", "Procedural", "60 FPS"]
+  },
+  {
+    id: "apex-formula-gp",
+    title: "Apex Formula GP",
+    subtitle: "2026 World Grand Prix Sim",
+    description:
+      "A 3D WebGL open-wheel Formula racing simulator featuring 10 constructors, 20 drivers, 8 iconic circuits, AI wheel-to-wheel grid racing, DRS, ERS boost, and a true 1st-person cockpit view.",
+    category: "racing",
+    status: "LIVE",
+    icon: "./assets/icons/formula-gp.jpeg",
+    iconSlot: {
+      code: "05",
+      monogram: "FG",
+      accent: "#f59e0b",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/apex-formula-gp/",
+    repoUrl: "https://github.com/TrySmthNew993/apex-formula-gp",
+    secondaryLink: null,
+    tags: ["Three.js", "WebGL", "Open-Wheel", "DRS & ERS", "Cockpit POV"]
   }
 ];
