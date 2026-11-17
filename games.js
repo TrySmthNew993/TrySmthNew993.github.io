@@ -138,5 +138,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/apex-market-simulator",
     secondaryLink: null,
     tags: ["Market Sim", "Stocks & Crypto", "Candlestick Charts", "Order Book", "PnL"]
+  },
+  {
+    id: "bloodcore-ultraquake",
+    title: "UltraQuake",
+    subtitle: "Kinetic Retro-Cyber Browser FPS",
+    description:
+      "A fast-paced kinetic retro-cyber FPS in ULTRAKILL & Quake style with PS1 dithered textures, dynamic lighting, 4 combo weapons (coin ricoshots, core nukes), and endless generative mode.",
+    category: "action",
+    status: "LIVE",
+    icon: "./assets/icons/ultraquake.jpeg",
+    iconSlot: {
+      code: "07",
+      monogram: "UQ",
+      accent: "#ef4444",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/bloodcore-ultraquake/",
+    repoUrl: "https://github.com/TrySmthNew993/bloodcore-ultraquake",
+    secondaryLink: null,
+    tags: ["Three.js", "FPS", "Retro 3D", "Quake / ULTRAKILL", "Breakcore Synth"]
   }
 ];
