@@ -13,6 +13,7 @@ A minimalistic, dark frost glass game library linking live playable browser buil
 - **Formula Manager** — 2026–2027 Team Principal Simulator ([Play Live](https://trysmthnew993.github.io/formula-manager/) · [Repo](https://github.com/TrySmthNew993/formula-manager))
 - **Rookie Chess** — Multiplayer WebRTC Chess ([Play Live](https://trysmthnew993.github.io/chess-online/) · [Repo](https://github.com/TrySmthNew993/chess-online))
 - **Voxel Sandbox** — 3D Procedural WebGL World ([Play Live](https://trysmthnew993.github.io/voxel-sandbox/) · [Repo](https://github.com/TrySmthNew993/voxel-sandbox))
+- **ApexEX** — Stock & Crypto Market Simulator ([Play Live](https://trysmthnew993.github.io/apex-market-simulator/) · [Repo](https://github.com/TrySmthNew993/apex-market-simulator))
 
 ---
 

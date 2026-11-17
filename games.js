@@ -118,5 +118,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/apex-formula-gp",
     secondaryLink: null,
     tags: ["Three.js", "WebGL", "Open-Wheel", "DRS & ERS", "Cockpit POV"]
+  },
+  {
+    id: "apex-ex",
+    title: "ApexEX",
+    subtitle: "Stock & Crypto Market Sim",
+    description:
+      "A mobile-first browser market simulator featuring 16 crypto and company stock pairs, live order book, candlestick charts, limit/market orders, and portfolio simulation.",
+    category: "simulation",
+    status: "LIVE",
+    icon: "./assets/icons/apex-ex.jpeg",
+    iconSlot: {
+      code: "06",
+      monogram: "EX",
+      accent: "#38bdf8",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/apex-market-simulator/",
+    repoUrl: "https://github.com/TrySmthNew993/apex-market-simulator",
+    secondaryLink: null,
+    tags: ["Market Sim", "Stocks & Crypto", "Candlestick Charts", "Order Book", "PnL"]
   }
 ];
