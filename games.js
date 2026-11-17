@@ -60,9 +60,9 @@ window.APEXWARE_GAMES = [
     tags: ["Strategy", "Live Telemetry", "60+ Drivers", "Single-File"]
   },
   {
-    id: "rookie-chess",
-    title: "Rookie Chess",
-    subtitle: "Multiplayer WebRTC Chess",
+    id: "knightlink-chess",
+    title: "KnightLink Chess",
+    subtitle: "Online P2P & Local Chess",
     description:
       "Online and local multiplayer chess with timers, clean board animations, and zero-server peer-to-peer WebRTC networking designed for browser play.",
     category: "strategy",
@@ -70,7 +70,7 @@ window.APEXWARE_GAMES = [
     icon: "./assets/icons/chess.jpeg",
     iconSlot: {
       code: "03",
-      monogram: "RC",
+      monogram: "KC",
       accent: "#a855f7",
       hint: "ICON SLOT"
     },
