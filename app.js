@@ -183,7 +183,8 @@
 
     const titleWrap = el('div', 'game-title-wrap');
     const meta = el('div', 'game-meta-row');
-    meta.appendChild(el('span', 'status-pill', game.status || 'LIVE'));
+    const isTesting = (game.status || '').toUpperCase() === 'UNDER TESTING';
+    meta.appendChild(el('span', `status-pill ${isTesting ? 'status-testing' : ''}`, game.status || 'LIVE'));
     titleWrap.appendChild(meta);
     const title = el('h2', '', game.title);
     title.id = 'modal-title';
@@ -235,7 +236,8 @@
 
     const titleWrap = el('div', 'game-title-wrap');
     const metaRow = el('div', 'game-meta-row');
-    metaRow.appendChild(el('span', 'status-pill', game.status || 'LIVE'));
+    const isTesting = (game.status || '').toUpperCase() === 'UNDER TESTING';
+    metaRow.appendChild(el('span', `status-pill ${isTesting ? 'status-testing' : ''}`, game.status || 'LIVE'));
 
     const isFav = favorites.has(game.id);
     const favBtn = el('button', `fav-btn ${isFav ? 'is-fav' : ''}`);

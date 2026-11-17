@@ -584,6 +584,15 @@ body {
   color: var(--text-subtle);
 }
 
+.status-testing {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  padding: 2px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
 .fav-btn {
   border: none;
   background: transparent;

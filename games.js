@@ -126,7 +126,7 @@ window.APEXWARE_GAMES = [
     description:
       "A mobile-first browser market simulator featuring 16 crypto and company stock pairs, live order book, candlestick charts, limit/market orders, and portfolio simulation.",
     category: "simulation",
-    status: "LIVE",
+    status: "UNDER TESTING",
     icon: "./assets/icons/apex-ex.jpeg",
     iconSlot: {
       code: "06",
