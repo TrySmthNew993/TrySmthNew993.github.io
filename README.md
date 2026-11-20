@@ -15,6 +15,7 @@ A minimalistic, dark frost glass game library linking live playable browser buil
 - **Voxel Sandbox** — 3D Procedural WebGL World ([Play Live](https://trysmthnew993.github.io/voxel-sandbox/) · [Repo](https://github.com/TrySmthNew993/voxel-sandbox))
 - **ApexEX** — Stock & Crypto Market Simulator ([Play Live](https://trysmthnew993.github.io/apex-market-simulator/) · [Repo](https://github.com/TrySmthNew993/apex-market-simulator))
 - **UltraQuake** — Kinetic Retro-Cyber Browser FPS ([Play Live](https://trysmthnew993.github.io/bloodcore-ultraquake/) · [Repo](https://github.com/TrySmthNew993/bloodcore-ultraquake))
+- **Rooftop Vertigo** — 3D Urban Exploration & Roofing Simulator ([Play Live](https://trysmthnew993.github.io/rooftop-vertigo/) · [Repo](https://github.com/TrySmthNew993/rooftop-vertigo))
 
 ---
 

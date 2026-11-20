@@ -158,5 +158,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/bloodcore-ultraquake",
     secondaryLink: null,
     tags: ["Three.js", "FPS", "Retro 3D", "Quake / ULTRAKILL", "Breakcore Synth"]
+  },
+  {
+    id: "rooftop-vertigo",
+    title: "Rooftop Vertigo",
+    subtitle: "3D Urban Exploration & Roofing Sim",
+    description:
+      "A 3D first-person illegal urban exploration, roofing, and high-altitude extraction game. Explore wet alleys, bunker wings, ventilation ducts, and scale skyscrapers up to a 220m TV lattice mast.",
+    category: "simulation",
+    status: "LIVE",
+    icon: "./assets/icons/rooftop-vertigo.jpeg",
+    iconSlot: {
+      code: "08",
+      monogram: "RV",
+      accent: "#64748b",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/rooftop-vertigo/",
+    repoUrl: "https://github.com/TrySmthNew993/rooftop-vertigo",
+    secondaryLink: null,
+    tags: ["Three.js", "First-Person", "Urban Exploration", "Parkour & Climbing", "PBR Night"]
   }
 ];
