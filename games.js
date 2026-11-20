@@ -178,5 +178,25 @@ window.APEXWARE_GAMES = [
     repoUrl: "https://github.com/TrySmthNew993/rooftop-vertigo",
     secondaryLink: null,
     tags: ["Three.js", "First-Person", "Urban Exploration", "Parkour & Climbing", "PBR Night"]
+  },
+  {
+    id: "zachep-bunker",
+    title: "Zachep // Object-47",
+    subtitle: "Train Surfing & Bunker Infiltration",
+    description:
+      "A fast-paced 3D first-person train surfing (зачеп) and underground military bunker infiltration game. Cling to high-speed trains, dodge overhead beams, jump between railcars, penetrate sealed underground sectors, and bypass security drones.",
+    category: "action",
+    status: "LIVE",
+    icon: "./assets/icons/zachep-bunker.jpeg",
+    iconSlot: {
+      code: "09",
+      monogram: "ZB",
+      accent: "#f97316",
+      hint: "ICON SLOT"
+    },
+    pageUrl: "https://trysmthnew993.github.io/zachep-bunker/",
+    repoUrl: "https://github.com/TrySmthNew993/zachep-bunker",
+    secondaryLink: null,
+    tags: ["Three.js", "First-Person", "Train Surfing", "Bunker", "Retro 3D", "Zero Alloc"]
   }
 ];

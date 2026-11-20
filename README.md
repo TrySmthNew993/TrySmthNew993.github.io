@@ -16,6 +16,7 @@ A minimalistic, dark frost glass game library linking live playable browser buil
 - **ApexEX** — Stock & Crypto Market Simulator ([Play Live](https://trysmthnew993.github.io/apex-market-simulator/) · [Repo](https://github.com/TrySmthNew993/apex-market-simulator))
 - **UltraQuake** — Kinetic Retro-Cyber Browser FPS ([Play Live](https://trysmthnew993.github.io/bloodcore-ultraquake/) · [Repo](https://github.com/TrySmthNew993/bloodcore-ultraquake))
 - **Rooftop Vertigo** — 3D Urban Exploration & Roofing Simulator ([Play Live](https://trysmthnew993.github.io/rooftop-vertigo/) · [Repo](https://github.com/TrySmthNew993/rooftop-vertigo))
+- **Zachep // Object-47** — 3D Train Surfing & Bunker Infiltration ([Play Live](https://trysmthnew993.github.io/zachep-bunker/) · [Repo](https://github.com/TrySmthNew993/zachep-bunker))
 
 ---
 
